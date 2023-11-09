@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Join/설명작성란/Apache Tomcat Servlet JSP 등 설명 작성&apos; to &apos;Apache Tomcat Servlet JSP 등 설명 작성.txt&apos;" description="Rename resource &apos;Apache Tomcat Servlet JSP 등 설명 작성&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="설명작성란/Apache Tomcat Servlet JSP 등 설명 작성" name="Apache Tomcat Servlet JSP 등 설명 작성.txt" stamp="1699324446241" updateReferences="true"/>
+</session>
