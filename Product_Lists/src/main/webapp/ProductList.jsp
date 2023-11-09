@@ -27,7 +27,7 @@
 			for(Product p : products){
 				%>
 				<tr>
-					<td> <a href ="상세페이지.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId() %></a></td>
+					<td> <a href ="productDetail.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId()%></a></td>
 					<td> <%=p.getProductName() %></td>
 					<td><%=p.getCategory() %>
 					<td><%=p.getPrice() %></td>

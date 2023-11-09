@@ -30,8 +30,8 @@ public class ProductDAO {
 			ResultSet resultSet = ps.executeQuery();
 			
 			while(resultSet.next()) {
-				int productId = resultSet.getInt("productId");
-				String productName = resultSet.getString("productName");
+				int productId = resultSet.getInt("product_id");
+				String productName = resultSet.getString("product_name");
 				String category = resultSet.getString("category");
 				double price = resultSet.getDouble("price");
 				int stockQuantity = resultSet.getInt("stock_quantity");
@@ -47,4 +47,37 @@ public class ProductDAO {
 		
 	}
 	
+	public Product getProductId(int productId) {
+		Product product = null;
+		//select 해서 하나만 볼 수 있는 쿼리 작성하고 
+		Connection connection;
+		try {
+			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+			String sql = "SELECT * FROM products where product_id =?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, productId);
+			ResultSet resultSet = ps.executeQuery();
+			// new product 이용해서 값 가져오기
+			if(resultSet.next()) {
+				productId = resultSet.getInt("product_id");
+				String productName = resultSet.getString("product_name");
+				String category = resultSet.getString("category");
+				double price = resultSet.getDouble("price");
+				int stockQuantity = resultSet.getInt("stock_quantity");
+				product = new Product(productId,productName, category,price,stockQuantity);
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return product;
+	}
+	private int getProductId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

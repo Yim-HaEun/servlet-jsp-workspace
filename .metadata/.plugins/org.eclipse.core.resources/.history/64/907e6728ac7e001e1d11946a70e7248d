@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>제품 상세 페이지</title>
+</head>
+<body>
+<h1>제품 상세 정보</h1>
+<%
+	//String = id값을 가지고 오겠다.
+	String productIdValue = request.getParameter("productId");
+	int productId = Integer.parseInt(productIdValue);
+	
+	//DAO작업
+	ProductDAO productDAO = new ProductDAO();
+	Product productDetail = productDAO.getProductId();
+
+	
+%>
+<p>제품 id : <%=productDetail.getProductId() %>
+<p>제품 이름 : <%=productDetail.getProductName() %>
+<p>제품 카테고리 : <%=productDetail.getProductCategory()%>
+<p>제품 가격 : <%=productDetail.getProductPrice() %>
+<p> 수량 : <%=productDetail.getProductStockQuantity() %>
+</body>
+</html>
